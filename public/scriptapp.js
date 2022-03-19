@@ -32,6 +32,8 @@ function runFetch(country) {
   }
   let vlink = `https://covid-api.mmediagroup.fr/v1/cases?country=${country.initCap()}`;
   document.getElementById("result").textContent = "Loading";
+  document.getElementById("Error").textContent = "";
+  document.getElementById("Success").textContent = "";
   fetch(vlink)
     .then((rsp) => rsp.json())
     .then((data) => {
